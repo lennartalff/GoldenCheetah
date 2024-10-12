@@ -90,7 +90,7 @@ class TrainView : public AbstractView
         void onSelectionChanged();
 
     private:
-
+        QTimer *timer;
         TrainSidebar *trainTool;
         TrainBottom *trainBottom;
         Perspective *hw;

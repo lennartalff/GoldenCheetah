@@ -618,8 +618,7 @@ Perspective::styleChanged(int id, bool force)
 
     // now refresh as we are done
     setUpdatesEnabled(true);
-    //update();
-
+    update();
 }
 
 void
@@ -981,6 +980,8 @@ Perspective::eventFilter(QObject *object, QEvent *e)
 {
     if (active || resizing || !isVisible()) return false; // ignore when we aren't visible or busy doing shit
 
+  winArea->viewport()->update();
+  winWidget->update();
 #ifdef GC_WANT_R
     if (e->type() == QEvent::KeyPress && static_cast<QKeyEvent*>(e)->key()==Qt::Key_Escape) {
         // if we're running a script stop it
