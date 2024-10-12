@@ -286,7 +286,7 @@ TrainView::TrainView(Context *context, QStackedWidget *controls) : AbstractView(
 {
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
-    timer->start(20);
+    timer->start(100);
     trainTool = new TrainSidebar(context);
     trainTool->setTrainView(this);
     trainTool->hide();
